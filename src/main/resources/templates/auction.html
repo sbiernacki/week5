@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>REST-API-AUCTION</title>
+  <style>
+    table,
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+
+<table border="1">
+  <thead>
+  <tr>
+    <td>DT</td>
+    <td>WinningBidMax</td>
+    <td>WinningBidMin</td>
+    <td>WinningBidMean</td>
+    <td>AuctionTradingVolume</td>
+    <td>AuctionLotsCount</td>
+    <td>AllAuctionsLotsCount</td>
+    <td>AuctionName</td>
+    <td>AuctionSlug</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="item : ${auctions}">
+    <td th:text="${item.getDt()}"></td>
+    <td th:text="${item.getWinningBidMax()}"></td>
+    <td th:text="${item.getWinningBidMin()}"></td>
+    <td th:text="${item.getWinningBidMean()}"></td>
+    <td th:text="${item.getAuctionTradingVolume()}"></td>
+    <td th:text="${item.getAuctionLotsCount()}"></td>
+    <td th:text="${item.getAllAuctionsLotsCount()}"></td>
+    <td th:text="${item.getAuctionName()}"></td>
+    <td th:text="${item.getAuctionSlug()}"></td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
